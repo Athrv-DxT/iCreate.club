@@ -332,7 +332,6 @@ body {
 .letter-flip.t { animation-delay: 2.9s; }
 .letter-flip.y { animation-delay: 3s; }
 
-/* Top line decoration */
 .flip-word::before {
     content: '';
     position: absolute;
@@ -521,7 +520,6 @@ body {
     color: #fff;
 }
 
-/* All existing animations remain unchanged */
 @keyframes moveOrb {
     0% { transform: translate(0, 0) rotate(0deg); }
     33% { transform: translate(10%, 10%) rotate(120deg); }
@@ -793,7 +791,6 @@ body {
     }
 }
 
-/* Maintain aspect ratio for gradient orbs on mobile */
 @media screen and (max-width: 768px) {
     .gradient-orb {
         width: 80vmax;
@@ -801,7 +798,7 @@ body {
     }
 }
 @media screen and (max-width: 768px) {
-    /* Add this for tagline animation */
+
     @keyframes taglineLetterIn {
         from {
             opacity: 0;

@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Animation for tagline words
+
     const taglineContainer = document.getElementById('taglineContainer');
     const words = ['Learn', 'Create', 'Innovate'];
     let currentWordIndex = 0;
@@ -28,7 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
             wordContainer.style.transform = 'translateY(0)';
         });
 
-        // Schedule next word
         setTimeout(() => {
             wordContainer.style.opacity = '0';
             wordContainer.style.transform = 'translateY(-20px)';
@@ -43,7 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Start tagline animation
     setTimeout(animateTagline, 1000);
 
-    // Intersection Observer for benefits list and poster image
     const observerOptions = {
         threshold: 0.2,
         rootMargin: '0px 0px -100px 0px'
@@ -84,11 +82,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Police line text animation
     const lineText = document.querySelector('.line-text');
     if (lineText) {
-        // Duplicate text for seamless scrolling
+
         lineText.innerHTML += lineText.innerHTML;
     }
 
-    // Handle smooth scrolling for any anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
