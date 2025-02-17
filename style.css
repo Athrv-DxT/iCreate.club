@@ -769,7 +769,8 @@ body {
     .dot {
         width: 16px;
         height: 16px;
-        top: -17px;
+        top: -20px;
+        transform: translateY(8px);
     }
 
     .advitya, .icreate-text {
