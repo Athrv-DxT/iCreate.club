@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         taglineContainer.appendChild(wordContainer);
 
-        // Animate word in
         requestAnimationFrame(() => {
             wordContainer.style.transition = 'opacity 0.5s, transform 0.5s';
             wordContainer.style.opacity = '1';
@@ -39,7 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 2000);
     }
 
-    // Start tagline animation
     setTimeout(animateTagline, 1000);
 
     const observerOptions = {
@@ -50,24 +48,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const fadeInObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Add fade-in animation for benefits
+
                 if (entry.target.classList.contains('benefits-list')) {
                     entry.target.querySelectorAll('li').forEach((li, index) => {
                         li.style.animation = `fadeIn 0.5s forwards ${index * 0.2}s`;
                     });
                 }
-                // Add fade-in animation for poster image
+
                 else if (entry.target.classList.contains('poster-image')) {
                     entry.target.style.animation = 'fadeIn 0.8s forwards';
                 }
                 
-                // Unobserve after animation
+
                 fadeInObserver.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    // Observe elements
     const elementsToObserve = [
         document.querySelector('.benefits-list'),
         document.querySelector('.poster-image')
@@ -79,7 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Police line text animation
     const lineText = document.querySelector('.line-text');
     if (lineText) {
 
@@ -101,9 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Add resize handler for responsive adjustments
     window.addEventListener('resize', () => {
-        // Update any necessary responsive elements
         const mainText = document.querySelector('.main-text');
         if (window.innerWidth <= 768) {
             mainText.style.fontSize = '60px';
@@ -112,11 +106,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Trigger initial resize check
     window.dispatchEvent(new Event('resize'));
 });
 
-// Observe teaser section
 const teaserObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
